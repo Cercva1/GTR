@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="pagetitle">
+      რკინიგზის ტელეკომი — მაგისტრალური ქსელის ოპერატორი
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/webp" href="assets/logo.webp" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+
+    <nav id="mainnav">
+      <a href="#top" class="logo">
+        <span class="logo-mark">
+          <img
+            src="assets/logo.webp"
+            alt="რკინიგზის ტელეკომი"
+            style="width: 100%; height: 100%; object-fit: contain; padding: 3px"
+          />
+        </span>
+        <span>GRT<small data-i18n="logoSub">რკინიგზის ტელეკომი</small></span>
+      </a>
+      <ul class="navlinks" id="navlinks">
+        <li><a href="#top" data-i18n="navHome">მთავარი</a></li>
+        <li><a href="#services" data-i18n="navServices">სერვისები</a></li>
+        <li><a href="#pricing" data-i18n="navPricing">ტარიფები</a></li>
+        <li><a href="#about" data-i18n="navAbout">ჩვენს შესახებ</a></li>
+        <li><a href="news.html" data-i18n="navNews">სიახლეები</a></li>
+        <li><a href="#contact" data-i18n="navContact">კონტაქტი</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button type="button" data-lang="ka" class="active">KA</button
+          ><button type="button" data-lang="en">EN</button>
+        </div>
+        <a href="#contact" class="nav-cta" data-i18n="navCta"
+          >დაგვიკავშირდით →</a
+        >
+        <button class="navtoggle" id="navtoggle" aria-label="Menu">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          >
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <section class="intro-hero" id="intro">
+      <div class="intro-bg"></div>
+      <div class="intro-overlay"></div>
+      <div class="intro-content">
+        <div class="intro-title-row">
+          <h1 class="intro-title">GRT</h1>
+          <div class="intro-divider"></div>
+          <p class="intro-tagline" data-i18n-html="introTagline">
+            მაგისტრალური ქსელის ოპერატორი,<br />რომელზეც საქართველო მუშაობს —
+            2004 წლიდან.
+          </p>
+        </div>
+        <a href="#top" class="intro-scroll">
+          <span data-i18n="introScroll">სქროლი</span>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 4v15M12 19l-6-6M12 19l6-6"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="topbar">
+        <div>
+          <span data-i18n="topbarLoc"
+            >თბილისი, საქართველო · მ. წინამძღვრიშვილის ქ. №160</span
+          >
+        </div>
+        <div class="status">
+          <span class="dot"></span>
+          <span data-i18n="topbarStatus">ქსელი აქტიურია — 24/7</span>
+        </div>
+      </div>
+
+      <!-- RECENT NEWS PREVIEW -->
+      <section class="section" id="recent-news" style="padding-bottom: 70px">
+        <div class="section-head reveal">
+          <div class="eyebrow" data-i18n="recentNewsEyebrow">სიახლეები</div>
+          <h2 data-i18n="recentNewsH2">ბოლო სიახლეები.</h2>
+          <p data-i18n="recentNewsP">
+            კომპანიის უახლესი განახლებები და ინფორმაცია.
+          </p>
+        </div>
+
+        <div
+          id="recent-news-loading"
+          class="news-empty"
+          data-i18n="newsLoading"
+        >
+          იტვირთება...
+        </div>
+        <div
+          id="recent-news-grid"
+          class="news-grid"
+          style="display: none"
+        ></div>
+        <div
+          id="recent-news-empty-msg"
+          class="news-empty"
+          style="display: none"
+          data-i18n="newsEmpty"
+        >
+          სიახლეები ჯერ არ არის დამატებული.
+        </div>
+
+        <div style="text-align: center; margin-top: 44px">
+          <a href="news.html" class="btn btn-ghost" data-i18n="exploreMoreBtn"
+            >ყველა სიახლის ნახვა →</a
+          >
+        </div>
+      </section>
+
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div>
+          <div class="eyebrow reveal" data-i18n="heroEyebrow">
+            მაგისტრალური ქსელის ოპერატორი · 2004 წლიდან
+          </div>
+          <h1 class="reveal" data-i18n-html="heroH1">
+            ბოჭკოვანი ინფრასტრუქტურა,<br />
+            რომელზეც <span class="accent">საქართველო მუშაობს.</span>
+          </h1>
+          <p class="lead reveal" data-i18n="heroLead">
+            რკინიგზის ტელეკომი ფლობს და ამუშავებს მაგისტრალურ ოპტიკურ-ბოჭკოვან
+            ქსელს საქართველოს რკინიგზის ინფრასტრუქტურის გასწვრივ — საერთაშორისო
+            და ადგილობრივი ოპერატორებისთვის, სომხეთის, აზერბაიჯანისა და თურქეთის
+            მიმართულებებით.
+          </p>
+          <div class="hero-ctas reveal">
+            <a href="#pricing" class="btn btn-primary" data-i18n="heroBtn1"
+              >ტარიფების ნახვა</a
+            >
+            <a href="#contact" class="btn btn-ghost" data-i18n="heroBtn2"
+              >კავშირის მოთხოვნა</a
+            >
+          </div>
+          <div class="hero-stats reveal">
+            <div class="stat">
+              <b>2004</b><span data-i18n="stat1">ოპერირების დაწყება</span>
+            </div>
+            <div class="stat">
+              <b>3</b><span data-i18n="stat2">სასაზღვრო მიმართულება</span>
+            </div>
+            <div class="stat">
+              <b>24/7</b><span data-i18n="stat3">ტექნიკური მხარდაჭერა</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <svg viewBox="0 0 400 400">
+            <path
+              class="geo-neighbor"
+              d="M -119.4,189.3 L -56.9,211.6 L -6.2,202.7 L 31.3,207.9 L 82.6,177.7 L 129.0,175.0 L 171.0,203.3 L 178.4,223.7 L 174.2,251.8 L 206.5,266.2 L 223.7,283.1 L 193.9,299.5 L 207.5,365.8 L 198.9,383.7 L 222.8,430.1 L 201.9,439.8 L 186.6,425.1 L 136.0,417.6 L 117.3,426.6 L 67.8,435.6 L 44.3,434.6 L -5.8,456.3 L -41.6,456.5 L -64.8,445.6 L -112.7,461.7 L -126.9,450.5 L -129.3,482.7 L -140.9,495.4 L -152.6,508.0 L -168.6,481.8 L -152.1,460.1 L -178.7,465.0 L -215.1,451.7 L -245.0,485.0 L -311.1,491.5 L -346.3,460.5 L -393.2,458.5 L -403.3,482.5 L -433.4,489.4 L -475.5,458.6 L -523.0,459.6 L -548.8,402.1 L -580.6,370.1 L -559.4,325.1 L -587.0,297.5 L -538.7,242.2 L -471.7,239.9 L -453.4,196.0 L -370.4,203.6 L -318.1,166.1 L -267.4,149.8 L -195.3,148.5 L -119.4,189.3 Z"
+            ></path>
+            <path
+              class="geo-neighbor"
+              d="M 232.7,281.5 L 245.6,297.0 L 264.9,296.9 L 264.7,305.8 L 282.4,339.2 L 252.6,331.6 L 230.6,304.9 L 223.7,283.1 L 232.7,281.5 Z M 336.0,196.0 L 355.2,199.9 L 362.7,185.2 L 388.7,161.9 L 411.6,192.4 L 433.7,233.4 L 454.0,236.1 L 467.4,251.6 L 431.5,256.3 L 424.0,301.2 L 416.5,321.4 L 400.5,335.0 L 401.7,363.6 L 390.8,366.5 L 363.7,336.2 L 378.7,307.6 L 365.9,290.6 L 349.5,294.9 L 298.2,337.5 L 297.2,297.5 L 277.7,288.0 L 259.2,272.3 L 271.5,253.9 L 248.3,234.0 L 257.0,219.5 L 240.5,209.5 L 231.4,194.3 L 242.1,184.9 L 274.5,201.5 L 298.0,204.9 L 303.9,198.2 L 282.5,166.9 L 293.8,158.9 L 306.0,160.9 L 336.0,196.0 Z"
+            ></path>
+            <path
+              class="geo-neighbor"
+              d="M 171.0,203.3 L 231.4,194.3 L 240.5,209.5 L 257.0,219.5 L 248.3,234.0 L 271.5,253.9 L 259.2,272.3 L 277.7,288.0 L 297.2,297.5 L 298.2,337.5 L 282.4,339.2 L 264.7,305.8 L 264.9,296.9 L 245.6,297.0 L 232.7,281.5 L 223.7,283.1 L 206.5,266.2 L 174.2,251.8 L 178.4,223.7 L 171.0,203.3 Z"
+            ></path>
+            <path
+              class="geo-shape"
+              d="M 82.6,177.7 L 89.1,153.0 L 78.3,113.6 L 53.1,92.3 L 29.0,85.6 L 13.0,67.9 L 18.4,61.1 L 55.1,71.0 L 119.2,80.3 L 178.5,108.0 L 186.1,118.8 L 212.5,109.7 L 253.1,121.8 L 266.4,145.5 L 293.8,158.9 L 282.5,166.9 L 303.9,198.2 L 298.0,204.9 L 274.5,201.5 L 242.1,184.9 L 231.4,194.3 L 171.0,203.3 L 129.0,175.0 L 82.6,177.7 Z"
+            ></path>
+
+            <line
+              class="map-line active"
+              x1="225.1"
+              y1="167.3"
+              x2="144.7"
+              y2="172.3"
+            ></line>
+            <line
+              class="map-line active"
+              x1="225.1"
+              y1="167.3"
+              x2="253.3"
+              y2="155.6"
+            ></line>
+            <line
+              class="map-line active"
+              x1="225.1"
+              y1="167.3"
+              x2="149.6"
+              y2="231.7"
+            ></line>
+            <line
+              class="map-line active"
+              x1="225.1"
+              y1="167.3"
+              x2="211.5"
+              y2="256.1"
+            ></line>
+            <line
+              class="map-line active"
+              x1="225.1"
+              y1="167.3"
+              x2="291.9"
+              y2="227.0"
+            ></line>
+
+            <circle class="node hub" cx="225.1" cy="167.3" r="5"></circle>
+            <text class="map-label" x="237" y="164">TBILISI HUB</text>
+
+            <circle class="node" cx="144.7" cy="172.3" r="3.5"></circle>
+            <text class="map-label" x="144.7" y="188" text-anchor="middle">
+              SAMTSKHE
+            </text>
+
+            <circle class="node" cx="253.3" cy="155.6" r="3.5"></circle>
+            <text class="map-label" x="253.3" y="144" text-anchor="middle">
+              KAKHETI
+            </text>
+
+            <circle class="node border" cx="149.6" cy="231.7" r="3.5"></circle>
+            <text
+              class="map-label border-label"
+              x="149.6"
+              y="248"
+              text-anchor="middle"
+            >
+              TURKEY
+            </text>
+
+            <circle class="node border" cx="211.5" cy="256.1" r="3.5"></circle>
+            <text
+              class="map-label border-label"
+              x="211.5"
+              y="272"
+              text-anchor="middle"
+            >
+              ARMENIA
+            </text>
+
+            <circle class="node border" cx="291.9" cy="227.0" r="3.5"></circle>
+            <text
+              class="map-label border-label"
+              x="291.9"
+              y="243"
+              text-anchor="middle"
+            >
+              AZERBAIJAN
+            </text>
+          </svg>
+        </div>
+      </section>
+
+      <div class="marquee">
+        <div class="marquee-track">
+          <span>ᐳ <b data-i18n="m1">ინტერნეტ სერვისი</b></span>
+          <span>ᐳ <b data-i18n="m2">არხის იჯარა</b></span>
+          <span>ᐳ <b data-i18n="m3">მაგისტრალური ბოჭკოვანი ქსელი</b></span>
+          <span>ᐳ <b data-i18n="m4">საერთაშორისო ტრანზიტი</b></span>
+          <span>ᐳ <b data-i18n="m5">24/7 ტექ. მხარდაჭერა</b></span>
+          <span>ᐳ <b data-i18n="m1">ინტერნეტ სერვისი</b></span>
+          <span>ᐳ <b data-i18n="m2">არხის იჯარა</b></span>
+          <span>ᐳ <b data-i18n="m3">მაგისტრალური ბოჭკოვანი ქსელი</b></span>
+          <span>ᐳ <b data-i18n="m4">საერთაშორისო ტრანზიტი</b></span>
+          <span>ᐳ <b data-i18n="m5">24/7 ტექ. მხარდაჭერა</b></span>
+        </div>
+      </div>
+
+      <!-- SERVICES -->
+      <section class="section" id="services">
+        <div class="section-head reveal">
+          <div class="eyebrow" data-i18n="svcEyebrow">სერვისები</div>
+          <h2 data-i18n="svcH2">ორი გზა ჩვენს ქსელთან დასაკავშირებლად.</h2>
+          <p data-i18n="svcP">
+            რკინიგზის სადგურების საკომუნიკაციო კვანძებზე დაფუძნებული
+            ინფრასტრუქტურა — მორგებული როგორც ოპერატორებზე, ისე მსხვილ
+            ინსტიტუციურ მომხმარებლებზე.
+          </p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="service-num">01</div>
+            <div class="service-icon">
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="12"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                  opacity="0.5"
+                />
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="20"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  opacity="0.25"
+                />
+              </svg>
+            </div>
+            <h3 data-i18n="svc1h">ინტერნეტ სერვისი</h3>
+            <p data-i18n="svc1p">
+              ინტერნეტ სერვისი საქართველოს რკინიგზის სადგურის ტერიტორიაზე
+              მდებარე საკომუნიკაციო კვანძებში — მიწოდების ადგილი: რკინიგზის
+              ტელეკომის საკომუნიკაციო კვანძი.
+            </p>
+            <span class="service-tag" data-i18n="svc1tag">1–10,000 მბ/წ</span>
+          </div>
+          <div class="service-card reveal">
+            <div class="service-num">02</div>
+            <div class="service-icon">
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="8"
+                  y="18"
+                  width="32"
+                  height="12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <line
+                  x1="8"
+                  y1="24"
+                  x2="40"
+                  y2="24"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  stroke-dasharray="2 3"
+                />
+                <circle cx="14" cy="24" r="1.6" fill="currentColor" />
+                <circle cx="24" cy="24" r="1.6" fill="currentColor" />
+                <circle cx="34" cy="24" r="1.6" fill="currentColor" />
+              </svg>
+            </div>
+            <h3 data-i18n="svc2h">არხის იჯარა</h3>
+            <p data-i18n="svc2p">
+              მაგისტრალური ბოჭკოვანი არხების იჯარა საერთაშორისო და ადგილობრივი
+              ოპერატორებისთვის — სრული სპეციფიკაცია ხელმისაწვდომია დოკუმენტში.
+            </p>
+            <a
+              class="service-tag service-tag-link"
+              href="assets/channel-lease-offer.pdf"
+              target="_blank"
+              rel="noopener"
+              data-i18n="svc2tag"
+              >PDF სპეციფიკაცია ↗</a
+            >
+          </div>
+          <div class="service-card reveal">
+            <div class="service-num">03</div>
+            <div class="service-icon">
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 6L40 15V33L24 42L8 33V15L24 6Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M24 6V42M8 15L40 33M40 15L8 33"
+                  stroke="currentColor"
+                  stroke-width="0.8"
+                  opacity="0.4"
+                />
+              </svg>
+            </div>
+            <h3 data-i18n="svc3h">საერთაშორისო ტრანზიტი</h3>
+            <p data-i18n="svc3p">
+              საქართველოს გავლით სერვისის მიწოდება სომხეთის, აზერბაიჯანისა და
+              თურქეთის საზღვრებამდე — მაგისტრალური ქსელის მეშვეობით.
+            </p>
+            <span class="service-tag" data-i18n="svc3tag"
+              >3 სასაზღვრო მიმართულება</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- TECHNOLOGY SHOWCASE -->
+      <section class="section" id="technology" style="padding-bottom: 70px">
+        <div class="section-head reveal">
+          <div class="eyebrow" data-i18n="techEyebrow">ინფრასტრუქტურა</div>
+          <h2 data-i18n="techH2">ტექნოლოგია, რომელსაც ვენდობით.</h2>
+          <p data-i18n="techP">
+            ბოჭკოვანი ხაზებიდან მონაცემთა გადამამუშავებელ კვანძებამდე —
+            ინფრასტრუქტურა, რომელიც აშენებულია საიმედოობისთვის.
+          </p>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <svg
+              class="tech-illustration"
+              viewBox="0 0 220 170"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="110" cy="85" r="46" class="tc-ring" />
+              <circle cx="110" cy="85" r="32" class="tc-ring" />
+              <circle cx="72" cy="60" r="7" class="tc-fiber" />
+              <circle cx="150" cy="58" r="5" class="tc-fiber-dim" />
+              <circle cx="150" cy="112" r="7" class="tc-fiber" />
+              <circle cx="70" cy="112" r="5" class="tc-fiber-dim" />
+              <circle cx="110" cy="85" r="10" class="tc-core" />
+              <circle cx="110" cy="85" r="10" class="tc-core-pulse" />
+              <path d="M20 85h30M170 85h30" class="tc-line" />
+              <path d="M20 85h30M170 85h30" class="tc-line-dash" />
+            </svg>
+            <h3 data-i18n="tech1h">ბოჭკოვანი ქსელი</h3>
+            <p data-i18n="tech1p">
+              მაღალი გამტარუნარიანობის ოპტიკურ-ბოჭკოვანი ხაზები, აშენებული
+              საიმედოობისა და მინიმალური latency-სთვის.
+            </p>
+          </div>
+          <div class="tech-card reveal">
+            <svg
+              class="tech-illustration"
+              viewBox="0 0 220 170"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="65"
+                y="30"
+                width="90"
+                height="110"
+                rx="4"
+                class="tc-rack-body"
+              />
+              <line x1="65" y1="58" x2="155" y2="58" class="tc-rack-line" />
+              <line x1="65" y1="86" x2="155" y2="86" class="tc-rack-line" />
+              <line x1="65" y1="114" x2="155" y2="114" class="tc-rack-line" />
+              <circle cx="78" cy="44" r="3" class="tc-led tc-led-1" />
+              <circle cx="88" cy="44" r="3" class="tc-led tc-led-2" />
+              <circle cx="78" cy="72" r="3" class="tc-led tc-led-2" />
+              <circle cx="88" cy="72" r="3" class="tc-led tc-led-1" />
+              <circle cx="78" cy="100" r="3" class="tc-led tc-led-1" />
+              <circle cx="88" cy="100" r="3" class="tc-led tc-led-2" />
+              <circle cx="78" cy="128" r="3" class="tc-led tc-led-2" />
+              <circle cx="88" cy="128" r="3" class="tc-led tc-led-1" />
+              <line x1="115" y1="44" x2="142" y2="44" class="tc-rack-slot" />
+              <line x1="115" y1="72" x2="142" y2="72" class="tc-rack-slot" />
+              <line x1="115" y1="100" x2="142" y2="100" class="tc-rack-slot" />
+              <line x1="115" y1="128" x2="142" y2="128" class="tc-rack-slot" />
+            </svg>
+            <h3 data-i18n="tech2h">მონაცემთა კვანძი</h3>
+            <p data-i18n="tech2p">
+              საკომუნიკაციო აღჭურვილობა რკინიგზის სადგურების ინფრასტრუქტურაში —
+              მუდმივი მონიტორინგით.
+            </p>
+          </div>
+          <div class="tech-card reveal">
+            <svg
+              class="tech-illustration"
+              viewBox="0 0 220 170"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15 85 Q 45 85 55 55 T 95 85 T 135 30 T 175 85 T 205 85"
+                class="tc-wave"
+              />
+              <path
+                d="M15 85 Q 45 85 55 55 T 95 85 T 135 30 T 175 85 T 205 85"
+                class="tc-wave-glow"
+              />
+              <circle cx="55" cy="55" r="3.5" class="tc-fiber-dim" />
+              <circle cx="135" cy="30" r="3.5" class="tc-fiber" />
+              <circle cx="205" cy="85" r="3.5" class="tc-fiber-dim" />
+              <circle class="tc-signal" r="4" cx="15" cy="85">
+                <animateMotion
+                  dur="4s"
+                  repeatCount="indefinite"
+                  path="M0 0 Q 30 0 40 -30 T 80 0 T 120 -55 T 160 0 T 190 0"
+                />
+              </circle>
+            </svg>
+            <h3 data-i18n="tech3h">სტაბილური სიგნალი</h3>
+            <p data-i18n="tech3p">
+              უწყვეტი გადაცემის მონიტორინგი და ავტომატური აღდგენა ხაზზე
+              გაუმართაობის შემთხვევაში.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section class="section" id="pricing">
+        <div class="section-head reveal">
+          <div class="eyebrow" data-i18n="priceEyebrow">ტარიფები</div>
+          <h2 data-i18n="priceH2">ინტერნეტ სერვისის ფასები.</h2>
+          <p data-i18n="priceP">
+            საწყისი ღირებულება 1 მბ/წ-ზე, მოცულობის მიხედვით. ფასი მითითებულია
+            დღგ-ს გარეშე.
+          </p>
+        </div>
+        <div class="pricing-panel reveal">
+          <div class="pricing-info">
+            <h3 data-i18n="priceInfoH">საკომუნიკაციო კვანძი</h3>
+            <p data-i18n="priceInfoP">
+              სერვისის მიწოდების ადგილი — რკინიგზის ტელეკომის საკომუნიკაციო
+              კვანძი, საქართველოს რკინიგზის სადგურის ტერიტორიაზე.
+            </p>
+            <div class="loc" data-i18n-html="priceLoc">
+              → მ. წინამძღვრიშვილის ქ. №160<br />
+              → თბილისი 0112, საქართველო<br />
+              → ტელ: +995 32 250 68 99
+            </div>
+          </div>
+          <table class="pricing">
+            <thead>
+              <tr>
+                <th data-i18n="th1">მოცულობა (მბ/წ)</th>
+                <th data-i18n="th2">საწყისი ღირებულება 1 მბ/წ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 – 50</td>
+                <td class="price">28</td>
+              </tr>
+              <tr>
+                <td>51 – 100</td>
+                <td class="price">27</td>
+              </tr>
+              <tr>
+                <td>101 – 200</td>
+                <td class="price">26</td>
+              </tr>
+              <tr>
+                <td>201 – 500</td>
+                <td class="price">25</td>
+              </tr>
+              <tr>
+                <td>501 – 1000</td>
+                <td class="price">23</td>
+              </tr>
+              <tr>
+                <td>1001 – 10000</td>
+                <td class="price">22</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="section-head reveal">
+          <div class="eyebrow" data-i18n="aboutEyebrow">ჩვენს შესახებ</div>
+          <h2 data-i18n="aboutH2">
+            ორი ათწლეულის მაგისტრალური ინფრასტრუქტურა.
+          </h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p data-i18n-html="aboutP1">
+              <strong>2004 წლიდან</strong> რკინიგზის ტელეკომი მაგისტრალური
+              ქსელის ოპერატორია. კომპანიის სარგებლობაშია მაგისტრალური
+              ოპტიკურ-ბოჭკოვანი კაბელის ქსელი, რომელიც აკავშირებს რამდენიმე
+              მიმართულებას.
+            </p>
+            <p data-i18n="aboutP2">
+              წლების განმავლობაში, კომპანიის განვითარების გეგმის მიხედვით,
+              შეიცვალა და გაუმჯობესდა მაგისტრალური ქსელის აპარატურა — რაც
+              უზრუნველყოფს სტაბილურ და მაღალი ხარისხის სერვისს.
+            </p>
+            <p data-i18n-html="aboutP3">
+              კომპანიის მომხმარებელთა შორისაა როგორც
+              <strong>საერთაშორისო</strong>, ისე
+              <strong>ადგილობრივი ოპერატორები</strong>, რომლებიც ეყრდნობიან
+              ჩვენს ინფრასტრუქტურას ყოველდღიურ ოპერირებაში.
+            </p>
+          </div>
+          <div class="reveal">
+            <div
+              class="eyebrow"
+              style="margin-bottom: 18px"
+              data-i18n="routeEyebrow"
+            >
+              სატრანზიტო მიმართულებები
+            </div>
+            <div class="route-list">
+              <div class="route-item">
+                <span class="country" data-i18n="route1">სომხეთი</span
+                ><span class="via" data-i18n="viaGeorgia"
+                  >საქართველოს გავლით</span
+                ><span class="arrow">→</span>
+              </div>
+              <div class="route-item">
+                <span class="country" data-i18n="route2">აზერბაიჯანი</span
+                ><span class="via" data-i18n="viaGeorgia"
+                  >საქართველოს გავლით</span
+                ><span class="arrow">→</span>
+              </div>
+              <div class="route-item">
+                <span class="country" data-i18n="route3">თურქეთი</span
+                ><span class="via" data-i18n="viaGeorgia"
+                  >საქართველოს გავლით</span
+                ><span class="arrow">→</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact" style="border-bottom: none">
+        <div class="section-head reveal">
+          <div class="eyebrow" data-i18n="contactEyebrow">კონტაქტი</div>
+          <h2 data-i18n="contactH2">დავიწყოთ დაკავშირება.</h2>
+        </div>
+        <div class="contact-grid reveal">
+          <div class="contact-block">
+            <h4 data-i18n="contactH4a">საკონტაქტო ინფორმაცია</h4>
+            <div class="contact-line">
+              <div class="k" data-i18n="kAddress">მისამართი</div>
+              <div class="v" data-i18n-html="vAddress">
+                მ. წინამძღვრიშვილის ქ. №160,<br />თბილისი 0112, საქართველო
+              </div>
+            </div>
+            <div class="contact-line">
+              <div class="k" data-i18n="kPhone">ტელეფონი</div>
+              <div class="v">
+                <a href="tel:+995322506899">+995 32 250 68 99</a>
+              </div>
+            </div>
+            <div class="contact-line">
+              <div class="k" data-i18n="kTech">ტექ. სამსახური</div>
+              <div class="v">
+                <a href="tel:+995322506806">+995 32 2 506 806</a>
+              </div>
+            </div>
+            <div class="contact-line">
+              <div class="k" data-i18n="kEmail">ელ-ფოსტა</div>
+              <div class="v"><a href="mailto:info@grt.ge">info@grt.ge</a></div>
+            </div>
+            <div class="contact-line">
+              <div class="k" data-i18n="kWeb">ვებ-გვერდი</div>
+              <div class="v">
+                <a href="http://grt.ge" target="_blank">grt.ge</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-block contact-cta-block">
+            <div>
+              <h4 data-i18n="contactH4b">მოითხოვეთ კავშირი</h4>
+              <p data-i18n="contactCtaP">
+                დაგვიკავშირდით ინტერნეტ სერვისთან ან არხის იჯარასთან
+                დაკავშირებული ინფორმაციისთვის — ჩვენი გუნდი 24/7 ხელმისაწვდომია.
+              </p>
+            </div>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap">
+              <a
+                href="tel:+995322506899"
+                class="btn btn-primary"
+                data-i18n="callBtn"
+                >დარეკვა →</a
+              >
+              <a
+                href="mailto:info@grt.ge"
+                class="btn btn-ghost"
+                data-i18n="emailBtn"
+                >იმეილის გაგზავნა</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAP -->
+      <section class="map-section">
+        <div class="map-card reveal">
+          <div class="map-card-info">
+            <div class="eyebrow" data-i18n="mapEyebrow">მდებარეობა</div>
+            <h4 data-i18n="mapH4">გვიპოვეთ რუკაზე</h4>
+            <p data-i18n-html="mapP">
+              მ. წინამძღვრიშვილის ქ. №160,<br />თბილისი 0112, საქართველო
+            </p>
+            <a
+              class="map-link"
+              href="https://www.google.com/maps/search/?api=1&query=M.+Tsinamdzgvrishvili+St+160%2C+Tbilisi%2C+Georgia"
+              target="_blank"
+              rel="noopener"
+              data-i18n="mapLink"
+              >Google Maps-ზე გახსნა →</a
+            >
+          </div>
+          <div class="map-embed">
+            <iframe
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=%E1%83%9B.%20%E1%83%AC%E1%83%98%E1%83%9C%E1%83%90%E1%83%9B%E1%83%AB%E1%83%A6%E1%83%95%E1%83%A0%E1%83%98%E1%83%A8%E1%83%95%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1%20%E1%83%A5.%20%E2%84%96160%2C%20%E1%83%97%E1%83%91%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1%E1%83%98%200112%2C%20%E1%83%A1%E1%83%90%E1%83%A5%E1%83%90%E1%83%A0%E1%83%97%E1%83%95%E1%83%94%E1%83%9A%E1%83%9D&z=16&output=embed"
+            >
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div
+          class="f-left"
+          style="display: flex; align-items: center; gap: 12px"
+        >
+          <img
+            src="assets/logo.webp"
+            alt="GRT"
+            style="
+              width: 26px;
+              height: 26px;
+              object-fit: contain;
+              border-radius: 50%;
+              background: #fdfdfd;
+              padding: 2px;
+            "
+          />
+          <span data-i18n="footerLeft"
+            >© 2004–2026 რკინიგზის ტელეკომი. ყველა უფლება დაცულია.</span
+          >
+        </div>
+        <div class="f-right">
+          <a href="#top">Facebook</a>
+          <a href="#top">LinkedIn</a>
+          <a href="#top">Twitter</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/supabase-config.js"></script>
+    <script src="script.js" defer></script>
+    <script src="recent-news.js" defer></script>
+  </body>
+</html>
